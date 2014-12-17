@@ -19,5 +19,9 @@ describe MegaCorps::Employee do
     it 'can be set on initialize' do
       expect(klass.new(120).salary).to eq 120
     end
+
+    it 'it converted to an integer' do
+      expect(klass.new('120').salary).to eq 120
+    end
   end
 end

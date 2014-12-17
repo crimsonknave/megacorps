@@ -13,6 +13,11 @@ describe MegaCorps::Player do
     it 'allows you to set credits' do
       expect(@player).to respond_to :credits=
     end
+
+    it 'casts to an int' do
+      @player.credits = '450'
+      expect(@player.credits).to eq 450
+    end
   end
 
   context 'buildings' do

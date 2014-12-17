@@ -3,7 +3,7 @@ module MegaCorps
     attr_accessor :salary
 
     def initialize(salary = 500)
-      @salary = salary
+      @salary = salary.to_i
     end
   end
 end

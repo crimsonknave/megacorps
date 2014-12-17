@@ -1,11 +1,14 @@
 module MegaCorps
   class Player
-    attr_accessor :credits
-    attr_reader :buildings, :corp, :employees
+    attr_reader :buildings, :credits, :corp, :employees
 
     def initialize
       @employees = []
       @credits = 500
+    end
+
+    def credits=(credits)
+      @credits = credits.to_i
     end
 
     def hire(employee)
