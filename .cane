@@ -1,0 +1,4 @@
+--style-measure 120
+--gte coverage/.last_run.json,100
+--color
+--no-doc
