@@ -3,6 +3,10 @@ Given(/a player with (\d+) credits/i) do |credits|
   @player.credits = credits
 end
 
+Given(/a player with (\d+) employees/i) do |num|
+  @player = @players.first
+  num.times do
+
 Then(/the player should be able to hire (\d+) employees?/i) do |num|
   cost = 0
   starting_credits = @player.credits
