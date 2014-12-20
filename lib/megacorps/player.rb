@@ -16,5 +16,11 @@ module MegaCorps
       self.credits -= employee.salary
       employees << employee
     end
+
+    def buy_building(building_name)
+      building = MegaCorps.const_get(building_name.classify).new
+      @credits -= building.cost
+      building
+    end
   end
 end

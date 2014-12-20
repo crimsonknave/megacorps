@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'gosu'
+# gem 'gosu'
 gem 'rspec'
 gem 'simplecov'
 gem 'rubocop'
@@ -9,6 +9,7 @@ gem 'cucumber'
 gem 'guard'
 gem 'guard-cucumber'
 gem 'guard-rspec', require: false
-gem 'guard-cane', path: '/home/jhenrich/code/guard-cane'
+gem 'guard-cane', '>= 0.2.1'
 gem 'guard-rubocop'
 gem 'guard-bundler'
+gem 'activesupport'

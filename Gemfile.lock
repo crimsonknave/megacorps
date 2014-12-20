@@ -1,11 +1,3 @@
-PATH
-  remote: /home/jhenrich/code/guard-cane
-  specs:
-    guard-cane (0.2.0)
-      cane
-      guard (>= 2.10.0)
-      guard-compat (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,7 +60,6 @@ GEM
     formatador (0.2.5)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    gosu (0.8.6)
     guard (2.10.4)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -79,6 +70,10 @@ GEM
     guard-bundler (2.1.0)
       bundler (~> 1.0)
       guard (~> 2.2)
+      guard-compat (~> 1.1)
+    guard-cane (0.2.1)
+      cane
+      guard (>= 2.10.0)
       guard-compat (~> 1.1)
     guard-compat (1.1.0)
     guard-cucumber (1.5.3)
@@ -217,11 +212,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   cucumber
-  gosu
   guard
   guard-bundler
-  guard-cane!
+  guard-cane (>= 0.2.1)
   guard-cucumber
   guard-rspec
   guard-rubocop

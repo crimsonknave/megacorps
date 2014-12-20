@@ -5,7 +5,7 @@ describe MegaCorps::Player do
     @player = MegaCorps::Player.new
   end
 
-  context 'credits' do
+  context '.credits' do
     it 'has a credit total' do
       expect(@player).to respond_to :credits
     end
@@ -20,7 +20,7 @@ describe MegaCorps::Player do
     end
   end
 
-  context 'buildings' do
+  context '.buildings' do
     it 'has some buildings' do
       expect(@player).to respond_to :buildings
     end
@@ -30,7 +30,7 @@ describe MegaCorps::Player do
     end
   end
 
-  context 'corp' do
+  context '.corp' do
     it 'has one corp' do
       expect(@player).to respond_to :corp
     end
@@ -40,7 +40,7 @@ describe MegaCorps::Player do
     end
   end
 
-  context 'employees' do
+  context '.employees' do
     it 'has some employees' do
       expect(@player).to respond_to :employees
     end
@@ -50,7 +50,21 @@ describe MegaCorps::Player do
     end
   end
 
-  context 'hire' do
+  context '.buy_building' do
+    it 'returns a building object of the correct type' do
+      expect(@player.buy_building('factory')).to be_kind_of MegaCorps::Factory
+      expect(@player.buy_building('office')).to be_kind_of MegaCorps::Office
+      expect(@player.buy_building('research_facility')).to be_kind_of MegaCorps::ResearchFacility
+    end
+
+    it 'deducts the cost of the building' do
+      credits = @player.credits
+      building = @player.buy_building 'factory'
+      expect(@player.credits).to eq(credits - building.cost)
+    end
+  end
+
+  context '.hire' do
     it 'adds an employee to the list' do
       employee = MegaCorps::Employee.new
       expect(@player.hire(employee)).to be_truthy
